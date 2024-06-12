@@ -33,9 +33,9 @@ Implementar validaciones para asegurarse de que las entradas  sean correctas (de
 
  """
  
- tasks = []
+tasks = []
  
- def mostrar_menu():
+def mostrar_menu():
     print("\nMenu de Opciones:")
     print("1. Agregar tarea")
     print("2. Listar tareas")
@@ -44,3 +44,20 @@ Implementar validaciones para asegurarse de que las entradas  sean correctas (de
     print("5. Marcar tarea como completada")
     print("6. Salir")
     return input("Seleccione una opcion: ")
+def agregar_tarea():
+    descripcion = input("Ingresa una tarea: ").strip()
+    if not descripcion:
+        print("La descripción no puede estar vacía.")
+        return
+    
+    fecha_vencimiento = input("Ingrese una fecha de vencimiento (YYYY-MM-DD): ")
+    try:
+        datetime.strptime(fecha_vencimiento, '%Y-%m-%d')
+    except ValueError:
+        print("Formato de fecha inválido.")
+        return
+    
+    tarea = {'descripcion': descripcion, 'fecha_vencimiento': fecha_vencimiento, 'completada': False}
+    tasks.append(tarea)
+    print("Tarea agregada con éxito.")
+
