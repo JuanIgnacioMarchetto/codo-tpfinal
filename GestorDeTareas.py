@@ -11,6 +11,8 @@ Crear una función para mostrar el menú de opciones y tomar la elección del us
 Agregar Tarea:
 Función para q el  usuario ingrese una tarea nueva con descripción y fecha de vencimiento.
 
+""" 
+""" 
 Listar Tareas:
 Función para mostrar todas las tareas,mostrando si están completadas o vencidas.
 
@@ -31,4 +33,14 @@ Implementar validaciones para asegurarse de que las entradas  sean correctas (de
 
  """
  
+ tasks = []
  
+ def mostrar_menu():
+    print("\nMenu de Opciones:")
+    print("1. Agregar tarea")
+    print("2. Listar tareas")
+    print("3. Buscar tarea")
+    print("4. Eliminar tarea")
+    print("5. Marcar tarea como completada")
+    print("6. Salir")
+    return input("Seleccione una opcion: ")
