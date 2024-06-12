@@ -11,8 +11,6 @@ Crear una función para mostrar el menú de opciones y tomar la elección del us
 Agregar Tarea:
 Función para q el  usuario ingrese una tarea nueva con descripción y fecha de vencimiento.
 
-""" 
-""" 
 Listar Tareas:
 Función para mostrar todas las tareas,mostrando si están completadas o vencidas.
 
@@ -50,14 +48,14 @@ def agregar_tarea():
         print("La descripción no puede estar vacía.")
         return
     
-    fecha_vencimiento = input("Ingrese una fecha de vencimiento (YYYY-MM-DD): ")
+    fecha_vencimiento = input("Ingresa una fecha de vencimiento (YYYY-MM-DD): ")
     try:
         datetime.strptime(fecha_vencimiento, '%Y-%m-%d')
     except ValueError:
-        print("Formato de fecha inválido.")
+        print("Formato inválido.")
         return
     
     tarea = {'descripcion': descripcion, 'fecha_vencimiento': fecha_vencimiento, 'completada': False}
     tasks.append(tarea)
-    print("Tarea agregada con éxito.")
+    print("Genial Tarea agregada .")
 
