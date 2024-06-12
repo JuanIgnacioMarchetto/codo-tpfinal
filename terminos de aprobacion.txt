@@ -1,0 +1,150 @@
+Codo a Codo - Nivel Inicial 2024
+Enunciado del Proyecto Final
+Objetivo del proyecto:
+Desarrollar una aplicación de consola en Python. La temática de esta aplicación es libre (*).
+El proyecto debe ser realizado idealmente en grupos de 4 estudiantes. Se espera que cada
+grupo divida el trabajo equitativamente y colabore en todas las fases del desarrollo del
+proyecto.
+Requisitos mínimos del proyecto:
+El desarrollo del proyecto debe utilizar los elementos de Python vistos en clase, entre ellos
+los siguientes:
+● Variables y tipos simples: Utilizar variables para almacenar datos necesarios para
+la aplicación, así como para controlar el flujo del programa.
+● Listas y/o diccionarios: Emplear listas y/o diccionarios para almacenar datos de la
+aplicación.
+● Entrada y salida por la Terminal: Implementar una interfaz de usuario en la
+terminal para interactuar con el programa. Esto incluirá mostrar un menú de
+opciones y permitir al usuario ingresar datos o seleccionar opciones.
+● Condicionales: Usar estructuras condicionales para implementar la lógica de
+decisiones, como determinar qué acción realizar en base a la elección del usuario o
+validar la información ingresada.
+● Bucles: Aplicar bucles para iterar sobre la colección de datos para realizar tareas
+como listarlos o buscar uno específico.
+● Funciones: Desarrollar funciones para organizar el código. Esto incluye funciones
+para agregar, listar, buscar y/o eliminar datos, así como cualquier otra funcionalidad
+necesaria para cumplir con los requisitos del proyecto.
+Funcionalidades mínimas esperadas:
+Entre las funciones que se espera posea la aplicación se encuentran las siguientes:
+● Agregar datos: Permitir al usuario ingresar nuevos datos a la colección con toda su
+información relevante.
+● Listar datos: Mostrar todos los datos en la colección, con la opción de filtrar por
+diferentes criterios.
+● Buscar datos: Permitir al usuario buscar un datos específico por su código o
+descripción.
+● Eliminar datos: Dar la opción de eliminar datos de la colección.
+● Menú de opciones: El programa debe iniciar mostrando un menú con opciones y
+permitir al usuario elegir qué acción desea realizar.
+● Validación de datos: Implementar alguna validación en la entrada de datos para
+minimizar los errores del usuario.
+Esta lista no es exhaustiva. Los integrantes del grupo podrán agregar a estas todas las
+funcionalidades extra que consideren necesarias.
+Presentación del proyecto:
+Cada grupo presentará su aplicación al resto del curso en una clase especial que se llevará
+a cabo durante la semana del 1 al 5 de Julio de 2024. Durante este taller, tendrán la
+oportunidad de presentar su proyecto y demostrar todo su potencial como desarrolladores
+Python.
+La presentación debe incluir una demostración de la aplicación funcionando, una
+explicación del código y del diseño del programa, y una discusión sobre los desafíos
+enfrentados y cómo se solucionaron. Durante la presentación en vivo, mostrarán el
+funcionamiento de su aplicación, podrán realizar pruebas de las operaciones y destacar las
+características más relevantes del proyecto. Se valorará la creatividad, la calidad del código
+y la eficacia de la presentación (ver rúbrica).
+Además, pactaremos una fecha de preentrega a realizarse durante el mes de Junio de
+2024,en la que podrán mostrar los avances logrados hasta el momento, y evacuar las dudas
+que cada equipo tenga.
+Aprobación del proyecto:
+Para aprobar el proyecto, se deben cumplir con al menos el 70% de las funcionalidades
+propuestas y realizar la presentación mencionada. Se basará en los siguientes criterios,
+cada uno con una puntuación máxima específica:
+Criterio
+Puntuación
+Máxima
+Detalles
+Umbral de
+Aprobación
+Funcionalidad 30 puntos
+Complejidad y correcto funcionamiento de las
+funcionalidades implementadas.
+15 puntos
+Calidad del
+Código
+25 puntos
+Claridad, organización y uso eficiente de
+Python. Uso adecuado de funciones y
+estructuras.
+10 puntos.
+Colaboración y
+participación
+15 puntos
+Contribución equitativa y colaborativa de todos
+los miembros del equipo.
+No aplicable
+Diseño de la
+Interfaz
+10 puntos
+Facilidad de uso, claridad de las instrucciones y
+robustez de las interacciones.
+5 puntos
+Innovación y
+Creatividad
+10 puntos
+Originalidad en la temática y en las soluciones
+de programación.
+No aplicable
+Presentación y
+Demostración
+10 puntos
+Claridad, profundidad y profesionalismo
+durante la presentación del proyecto.
+5 puntos
+Notas sobre el Umbral de Aprobación:
+● Funcionalidad: Al menos el 50% de las funcionalidades esperadas deben estar
+implementadas correctamente para alcanzar el umbral mínimo.
+● Calidad del Código: La claridad es fundamental. Códigos que sean
+extremadamente confusos y difíciles de seguir pueden ser motivo de desaprobación,
+incluso si otras áreas cumplen con los requisitos.
+● Diseño de la Interfaz y Presentación: Debe demostrar un mínimo de competencia
+en la usabilidad y en la capacidad de comunicar eficazmente los aspectos técnicos y
+operativos del proyecto.
+Ejemplo de Proyecto:
+El siguiente es un ejemplo de un proyecto que pueden realizar como grupo.
+Sistema de Gestión de Stock para un Comercio
+Descripción General del Proyecto:
+Este proyecto implica el desarrollo de un programa en Python diseñado para gestionar el
+stock de un comercio. El sistema estará equipado con un menú conmutador que permitirá a
+los usuarios navegar entre diferentes funcionalidades relacionadas con la manipulación y
+visualización de los datos (el inventario del comercio). Este inventario estará organizado en
+categorías de productos, cada una con atributos específicos como código de producto,
+nombre, cantidad en stock, precio y nacionalidad.
+Funcionalidades del Sistema:
+Autenticación de Usuario: Acceso al sistema mediante un nombre de usuario y contraseña,
+asegurando que solo el personal autorizado pueda gestionar el inventario.
+Menú de Gestión de Productos: Una vez autenticados, los usuarios acceden a un menú que
+ofrece las siguientes opciones:
+● Agregar Productos: Introducir nuevos productos en el sistema con todos sus detalles
+relevantes.
+● Eliminar Productos: Remover productos del sistema que ya no se comercialicen.
+● Modificar Productos: Actualizar la información de cualquier producto, incluyendo
+cantidad en stock y precio.
+● Visualización del Stock: Menú de Visualización de Stock: Un menú dedicado a la
+consulta de inventario permitiendo:
+● Ver Stock Total: Visualización de todos los productos en stock.
+● Filtrar por Categoría: Opción para visualizar productos según categorías
+específicas.
+● Información Detallada del Producto: Al seleccionar un producto, se muestra una
+pantalla con todos los detalles del mismo.
+(*) Sobre el contenido del trabajo:
+Al desarrollar esta aplicación, es esencial considerar que el contenido generado y las
+interacciones propuestas deben ser apropiados para un público de todas las edades. Por
+ello, pedimos que se adhieran a las siguientes directrices al diseñar y programar su
+aplicación:
+● Asegúrense de que todos los textos, mensajes y cualquier otro tipo de contenido
+comunicativo dentro de la aplicación sean educativos y adecuados, promoviendo el
+desarrollo sano y la creatividad.
+● El lenguaje utilizado debe estar libre de vulgaridades, insultos o cualquier forma de
+comunicación ofensiva.
+● Abstenerse de incluir contenidos que impliquen violencia, miedo, temas adultos o
+cualquier otro tema que pueda ser perturbador o inapropiado.
+Al seguir estas directrices, contribuirán a crear una experiencia segura, educativa y
+enriquecedora para todos los usuarios, independientemente de su edad. Agradecemos su
+compromiso con el desarrollo de aplicaciones responsables y accesibles
