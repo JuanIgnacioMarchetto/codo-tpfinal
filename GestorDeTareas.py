@@ -1,10 +1,10 @@
 """CONSULTAR AL PROFE SI NOS PERMITE AGREGAR UN HTML Y CSS PPARA DARLE MAS ONDA A LA APP"""
 
 """ 
-Variables y Tipos Simples
+***Variables y Tipos Simples
 Definir una lista para almacenar las tareas.
 
-Funciones
+***Funciones
 Mostrar Menú:
 Crear una función para mostrar el menú de opciones y tomar la elección del usuario.
 
