@@ -1,4 +1,3 @@
-
 listaDeTareas = [
     {"nombre_tarea": "Comprar leche",
         "descrip": "Ir al supermercado y comprar leche"},
