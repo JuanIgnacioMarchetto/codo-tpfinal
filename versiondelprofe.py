@@ -1,3 +1,26 @@
+"""
+Agregar Tarea con Fecha de Vencimiento:
+Modificar la función agregar_tarea para incorporar fecha de vencimiento.
+
+Listar Tareas con Estado:
+Cambiar la función ver_listado para mostrar si las tareas están completadas o vencidas.
+
+Buscar Tarea por Descripción:
+agregar una función para buscar una tarea por descripción.
+
+Marcar Tarea como Completada:
+Crear una función q marque una tarea como completada.
+
+Validación de Datos:
+poner validaciones  (descripción no vacía, formato de fecha válido).
+
+Actualizar el Menú:
+agregar nuevas opciones en el menú de opciones.
+
+Actualizar el Bucle Principal:
+Incluir los nuevos casos en el bucle principal para ejecutar las acciones adecuadas.
+"""
+
 listaDeTareas = [
     {"nombre_tarea": "Comprar leche",
         "descrip": "Ir al supermercado y comprar leche"},
