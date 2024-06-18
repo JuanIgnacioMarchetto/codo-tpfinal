@@ -1,8 +1,8 @@
 """
-Agregar Tarea con Fecha de Vencimiento:
+****Agregar Tarea con Fecha de Vencimiento:
 Modificar la función agregar_tarea para incorporar fecha de vencimiento.
 
-Listar Tareas con Estado:
+****Listar Tareas con Estado:
 Cambiar la función ver_listado para mostrar si las tareas están completadas o vencidas.
 
 Buscar Tarea por Descripción:
@@ -21,20 +21,38 @@ Actualizar el Bucle Principal:
 Incluir los nuevos casos en el bucle principal para ejecutar las acciones adecuadas.
 """
 
+from datetime import datetime
+
 listaDeTareas = [
     {"nombre_tarea": "Comprar leche",
-        "descrip": "Ir al supermercado y comprar leche"},
+        "descrip": "Ir al supermercado y comprar leche",
+        "fecha_vencimiento": "20/06/2024",
+        "completada": False},
     {"nombre_tarea": "Hacer ejercicio",
-    "descrip": "Hacer una rutina de ejercicios de 30 minutos"},
-    { "nombre_tarea": "Estudiar Python",
-     "descrip": "Completar el capítulo 3 del libro de Python" }
+        "descrip": "Hacer una rutina de ejercicios de 30 minutos",
+        "fecha_vencimiento": "21/06/2024",
+        "completada": False},
+    {"nombre_tarea": "Estudiar Python",
+        "descrip": "Completar el capítulo 3 del libro de Python",
+        "fecha_vencimiento": "22/06/2024",
+        "completada": False}
 ]
-def agregar_tarea(nombre, descripcion):
+
+def agregar_tarea(nombre, descripcion, fecha_vencimiento):
     tareaNueva = {
         "nombre_tarea": nombre,
-        "descrip": descripcion
+        "descrip": descripcion,
+        "fecha_vencimiento": fecha_vencimiento,
+        "completada": False
     }
     listaDeTareas.append(tareaNueva)
+    print("Tarea agregada con ÉXITO!")
+
+def ver_listado():
+    hoy = datetime.now()
+    for tarea in listaDeTareas:
+        estado = "Completada" if tarea["completada"] else ("Vencida" if datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy else "Pendiente")
+        print(f"{tarea['nombre_tarea']} : {tarea['descrip']} (Estado: {estado})")
 
 def borrar_tarea(nombre):
     for tarea in listaDeTareas:
@@ -54,10 +72,6 @@ def editar_tarea(nombre):
             print("Descripción Actualizada con ÉXITO")
             return
     print(f"Tarea con el nombre {nombre} no encontrada")
-
-def ver_listado():
-    for i in listaDeTareas:
-        print(f"{i['nombre_tarea']} : {i['descrip']}")
 
 def ver_opciones_menu():
     print("------ PROGRAMA DE TAREAS ---------")
@@ -79,8 +93,8 @@ while ejecutarPrograma:
         case 2:
             tareaNueva_nombre = input("Ingrese el nombre de la nueva tarea: ")
             tareaNueva_descripcion = input("Ingresa la descripción de la nueva tarea: ")
-            agregar_tarea(tareaNueva_nombre, tareaNueva_descripcion)
-            print("Tarea agregada con ÉXITO!")
+            tareaNueva_fecha = input("Ingresa la fecha de vencimiento (DD/MM/YYYY): ")
+            agregar_tarea(tareaNueva_nombre, tareaNueva_descripcion, tareaNueva_fecha)
         case 3:
             tarea_a_editar = input("Ingrese el nombre de la tarea a EDITAR: ")
             editar_tarea(tarea_a_editar)
