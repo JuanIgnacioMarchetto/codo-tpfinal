@@ -5,7 +5,7 @@ Modificar la función agregar_tarea para incorporar fecha de vencimiento.
 ****Listar Tareas con Estado:
 Cambiar la función ver_listado para mostrar si las tareas están completadas o vencidas.
 
-Buscar Tarea por Descripción:
+****Buscar Tarea por Descripción:
 agregar una función para buscar una tarea por descripción.
 
 Marcar Tarea como Completada:
@@ -72,6 +72,13 @@ def editar_tarea(nombre):
             print("Descripción Actualizada con ÉXITO")
             return
     print(f"Tarea con el nombre {nombre} no encontrada")
+
+def buscar_tarea(descripcion):
+    for tarea in listaDeTareas:
+        if descripcion.lower() in tarea["descrip"].lower():
+            print(f"Tarea encontrada: {tarea['nombre_tarea']} : {tarea['descrip']} (Vencimiento: {tarea['fecha_vencimiento']})")
+            return
+    print("Tarea no encontrada")
 
 def ver_opciones_menu():
     print("------ PROGRAMA DE TAREAS ---------")
