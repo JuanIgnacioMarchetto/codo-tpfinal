@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tares</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>App de Tareas</h1>
+        <div id="login-section">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button id="login-btn">Iniciar Sesión</button>
+            <p id="login-error" class="error"></p>
+        </div>
+
+        <div id="menu-section" class="hidden">
+            <h2>Menú</h2>
+            <button class="menu-btn" data-option="1">Ver listado de tareas</button>
+            <button class="menu-btn" data-option="2">Agregar una tarea nueva</button>
+            <button class="menu-btn" data-option="3">Editar una tarea existente</button>
+            <button class="menu-btn" data-option="4">Eliminar una tarea de la lista</button>
+            <button class="menu-btn" data-option="5">Buscar una tarea por descripción</button>
+            <button class="menu-btn" data-option="6">Marcar tarea como completada</button>
+            <button class="menu-btn" data-option="7">Salir del programa</button>
+        </div>
+
+        <div id="content-section" class="hidden">
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
