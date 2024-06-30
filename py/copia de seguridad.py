@@ -1,6 +1,5 @@
 from datetime import datetime
 from colorama import init, Fore, Back, Style
-
 init(autoreset=True)
 
 listaDeTareas = [
@@ -30,6 +29,7 @@ def agregar_tarea(nombre, descripcion, fecha_vencimiento):
     except ValueError:
         print(Fore.RED + "Formato de fecha inválido. Debe ser DD/MM/YYYY.")
         return
+    
     tareaNueva = {
         "nombre_tarea": nombre,
         "descrip": descripcion,
@@ -41,10 +41,10 @@ def agregar_tarea(nombre, descripcion, fecha_vencimiento):
 
 def ver_listado():
     hoy = datetime.now()
-    for idx, tarea in enumerate(listaDeTareas, start=1):
-        estado = "Completada" si la tarea["completada"] sino ("Vencida" si datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy sino "Pendiente")
-        estado_color = Fore.GREEN si estado == "Completada" sino (Fore.RED si estado == "Vencida" sino Fore.YELLOW)
-        print(f"{idx}. {tarea['nombre_tarea']} : {tarea['descrip']} (Estado: {estado_color}{estado}{Style.RESET_ALL})")
+    for tarea in listaDeTareas:
+        estado = "Completada" if tarea["completada"] else ("Vencida" if datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy else "Pendiente")
+        estado_color = Fore.GREEN if estado == "Completada" else (Fore.RED if estado == "Vencida" else Fore.YELLOW)
+        print(f"{tarea['nombre_tarea']} : {tarea['descrip']} (Estado: {estado_color}{estado}{Style.RESET_ALL})")
 
 def borrar_tarea(nombre):
     for tarea in listaDeTareas:
@@ -65,6 +65,7 @@ def editar_tarea(nombre):
             except ValueError:
                 print(Fore.RED + "Formato de fecha inválido. Debe ser DD/MM/YYYY.")
                 return
+            
             tarea["nombre_tarea"] = nuevoNombre
             tarea["descrip"] = nuevaDescripcion
             tarea["fecha_vencimiento"] = nuevaFecha
@@ -89,29 +90,34 @@ def marcar_completada(nombre):
 
 def ver_opciones_menu():
     print(Back.CYAN + "------ PROGRAMA DE TAREAS ---------")
-    print((Fore.LIGHTBLUE_EX + "1)"), "Ver listado de tareas")
-    print((Fore.LIGHTBLUE_EX + "2)"), "Agregar una tarea nueva")
-    print((Fore.LIGHTBLUE_EX + "3)"), "Editar una tarea existente")
-    print((Fore.LIGHTBLUE_EX + "4)"), "Eliminar una tarea de la lista")
-    print((Fore.LIGHTBLUE_EX + "5)"), "Buscar una tarea por descripción")
-    print((Fore.LIGHTBLUE_EX + "6)"), "Marcar tarea como completada")
-    print((Fore.LIGHTBLUE_EX + "7)"), "Salir del programa" + Style.RESET_ALL) 
-
+    print("1) Ver listado de tareas")
+    print("2) Agregar una tarea nueva")
+    print("3) Editar una tarea existente")
+    print("4) Eliminar una tarea de la lista")
+    print("5) Buscar una tarea por descripción")
+    print("6) Marcar tarea como completada")
+    print("7) Salir del programa" + Style.RESET_ALL)
+    
 def login():
     usuario_correcto = "Marcos"
     contrasena_correcta = "1234"
     intentos = 3
+    
     while intentos > 0:
+       
         usuario = input("Ingrese su nombre de usuario: ")
         contrasena = input("Ingrese su contraseña: ")
-        if usuario == usuario_correcto y contrasena == contrasena_correcta:
+        
+        if usuario == usuario_correcto and contrasena == contrasena_correcta:
             print(Fore.GREEN + "Inicio de sesión exitoso")
             return
         else:
             intentos -= 1
             print(Fore.RED + f"Nombre de usuario o contraseña incorrectos. Intentos restantes: {intentos}")
+    
     print(Fore.RED + "Se han agotado los intentos. Acceso denegado.")
     exit()
+
 
 login()
 
@@ -119,7 +125,8 @@ ejecutarPrograma = True
 
 while ejecutarPrograma:
     ver_opciones_menu()
-    opcion = input("Elige una opción: ") 
+    opcion = input("Elige una opción: ")
+    
     if opcion.isdigit():
         opcion = int(opcion)
         if opcion == 1:
