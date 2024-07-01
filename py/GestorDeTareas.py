@@ -9,8 +9,9 @@ colores_menu = {
     3: Fore.BLUE,
     4: Fore.GREEN,
     5: Fore.YELLOW,
-    6: Fore.RED,
-    7: Fore.LIGHTWHITE_EX
+    6: Fore.LIGHTCYAN_EX,
+    7: Fore.RED,
+    8: Fore.LIGHTWHITE_EX
 }
 
 listaDeTareas = [
@@ -47,7 +48,7 @@ def agregar_tarea(nombre, descripcion, fecha_vencimiento, color):
         "completada": False
     }
     listaDeTareas.append(tareaNueva)
-    print(color + "Tarea agregada con ÉXITO!")
+    print(color + "Tarea agregada con ÉXITO!\n" + "-"*50)
 
 def ver_listado(color):
     hoy = datetime.now()
@@ -55,14 +56,15 @@ def ver_listado(color):
         estado = "Completada" if tarea["completada"] else ("Vencida" if datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy else "Pendiente")
         estado_color = Fore.GREEN if estado == "Completada" else (Fore.RED if estado == "Vencida" else Fore.YELLOW)
         print(f"{idx}. {tarea['nombre_tarea']} : {tarea['descrip']} (Estado: {estado_color}{estado}{Style.RESET_ALL})")
+        print("-"*50)
 
 def borrar_tarea(nombre, color):
     for tarea in listaDeTareas:
         if tarea["nombre_tarea"].lower() == nombre.lower():
             listaDeTareas.remove(tarea)
-            print(color + f"Tarea: {nombre} eliminada con éxito")
+            print(color + f"Tarea: {nombre} eliminada con éxito\n" + "-"*50)
             return
-    print(Fore.RED + f"Tarea con el nombre {nombre} NO ENCONTRADA")
+    print(Fore.RED + f"Tarea con el nombre {nombre} NO ENCONTRADA\n" + "-"*50)
 
 def editar_tarea(nombre, color):
     for tarea in listaDeTareas:
@@ -78,27 +80,34 @@ def editar_tarea(nombre, color):
             tarea["nombre_tarea"] = nuevoNombre
             tarea["descrip"] = nuevaDescripcion
             tarea["fecha_vencimiento"] = nuevaFecha
-            print(color + "Descripción Actualizada con ÉXITO")
+            print(color + "Descripción Actualizada con ÉXITO\n" + "-"*50)
             return
-    print(Fore.RED + f"Tarea con el nombre {nombre} no encontrada")
+    print(Fore.RED + f"Tarea con el nombre {nombre} no encontrada\n" + "-"*50)
 
 def buscar_tarea(descripcion, color):
     for tarea in listaDeTareas:
         if descripcion.lower() in tarea["descrip"].lower():
-            print(color + f"Tarea encontrada: {tarea['nombre_tarea']} : {tarea['descrip']} (Vencimiento: {tarea['fecha_vencimiento']})")
+            print(color + f"Tarea encontrada: {tarea['nombre_tarea']} : {tarea['descrip']} (Vencimiento: {tarea['fecha_vencimiento']})\n" + "-"*50)
             return
-    print(Fore.RED + "Tarea no encontrada")
+    print(Fore.RED + "Tarea no encontrada\n" + "-"*50)
+
+def buscar_tarea_nombre(nombre, color):
+    for tarea in listaDeTareas:
+        if nombre.lower() == tarea["nombre_tarea"].lower():
+            print(color + f"Tarea encontrada: {tarea['nombre_tarea']} : {tarea['descrip']} (Vencimiento: {tarea['fecha_vencimiento']})\n" + "-"*50)
+            return
+    print(Fore.RED + "Tarea no encontrada\n" + "-"*50)
 
 def marcar_completada(nombre, color):
     for tarea in listaDeTareas:
         if tarea["nombre_tarea"].lower() == nombre.lower():
             tarea["completada"] = True
-            print(color + f"Tarea {nombre} marcada como completada.")
+            print(color + f"Tarea {nombre} marcada como completada.\n" + "-"*50)
             return
-    print(Fore.RED + f"Tarea con el nombre {nombre} no encontrada")
+    print(Fore.RED + f"Tarea con el nombre {nombre} no encontrada\n" + "-"*50)
 
 def ver_opciones_menu():
-    print(Back.CYAN + "✩✩✩｡:*•.──**─❁❁❁PROGRAMA✩DE✩TAREAS ❁❁❁─**──.•*:｡✩✩✩")
+    print("\n" + Back.CYAN + "✩✩✩｡:*•.──**─❁❁❁PROGRAMA✩DE✩TAREAS ❁❁❁─**──.•*:｡✩✩✩\n")
     for i, (opcion, color) in enumerate(colores_menu.items(), start=1):
         texto = {
             1: "Ver listado de tareas",
@@ -106,10 +115,12 @@ def ver_opciones_menu():
             3: "Editar una tarea existente",
             4: "Eliminar una tarea de la lista",
             5: "Buscar una tarea por descripción",
-            6: "Marcar tarea como completada",
-            7: "Salir del programa"
+            6: "Buscar una tarea por nombre",
+            7: "Marcar tarea como completada",
+            8: "Salir del programa"
         }
         print(f"{color}{i}) {texto[i]}{Style.RESET_ALL}")
+        print("-"*50)
 
 def login():
     usuario_correcto = "Marcos"
@@ -119,12 +130,12 @@ def login():
         usuario = input("Ingrese su nombre de usuario: ")
         contrasena = input("Ingrese su contraseña: ")
         if usuario == usuario_correcto and contrasena == contrasena_correcta:
-            print(Fore.GREEN + "Inicio de sesión exitoso")
+            print(Fore.GREEN + "Inicio de sesión exitoso\n" + "-"*50)
             return
         else:
             intentos -= 1
-            print(Fore.RED + f"Nombre de usuario o contraseña incorrectos. Intentos restantes: {intentos}")
-    print(Fore.RED + "Se han agotado los intentos. Acceso denegado.")
+            print(Fore.RED + f"Nombre de usuario o contraseña incorrectos. Intentos restantes: {intentos}\n" + "-"*50)
+    print(Fore.RED + "Se han agotado los intentos. Acceso denegado.\n" + "-"*50)
     exit()
 
 login()
@@ -134,6 +145,7 @@ ejecutarPrograma = True
 while ejecutarPrograma:
     ver_opciones_menu()
     opcion = input("Elige una opción: ") 
+    print("\n" + "-"*50)
     if opcion.isdigit():
         opcion = int(opcion)
         color = colores_menu.get(opcion, Fore.WHITE)
@@ -154,12 +166,15 @@ while ejecutarPrograma:
             tarea_a_buscar = input(color + "Ingrese la descripción de la tarea a buscar: ")
             buscar_tarea(tarea_a_buscar, color)
         elif opcion == 6:
+            tarea_nombre = input(color + "Ingrese el nombre de la tarea a buscar: ")
+            buscar_tarea_nombre(tarea_nombre, color)
+        elif opcion == 7:
             tarea_a_completar = input(color + "Ingrese el nombre de la tarea a marcar como completada: ")
             marcar_completada(tarea_a_completar, color)
-        elif opcion == 7:
-            print(Fore.YELLOW + "Saliendo del programa")
+        elif opcion == 8:
+            print(Fore.YELLOW + "Saliendo del programa\n" + "-"*50)
             ejecutarPrograma = False
         else:
-            print(Fore.RED + "Selecciona una opción válida")
+            print(Fore.RED + "Selecciona una opción válida\n" + "-"*50)
     else:
-        print(Fore.RED + "Selecciona una opción válida")
+        print(Fore.RED + "Selecciona una opción válida\n" + "-"*50)
