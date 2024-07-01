@@ -1,4 +1,4 @@
-from datetime import datetime
+""" -------------Copia de seguridad-----------------------from datetime import datetime
 from colorama import init, Fore, Back, Style
 init(autoreset=True)
 
@@ -155,3 +155,4 @@ while ejecutarPrograma:
             print(Fore.RED + "Selecciona una opción válida")
     else:
         print(Fore.RED + "Selecciona una opción válida")
+ """
