@@ -98,7 +98,7 @@ def marcar_completada(nombre, color):
     print(Fore.RED + f"Tarea con el nombre {nombre} no encontrada")
 
 def ver_opciones_menu():
-    print(Back.CYAN + "------ PROGRAMA DE TAREAS ---------")
+    print(Back.CYAN + "✩✩✩｡:*•.──**─❁❁❁PROGRAMA✩DE✩TAREAS ❁❁❁─**──.•*:｡✩✩✩")
     for i, (opcion, color) in enumerate(colores_menu.items(), start=1):
         texto = {
             1: "Ver listado de tareas",
