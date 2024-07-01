@@ -31,15 +31,15 @@ listaDeTareas = [
 
 def agregar_tarea(nombre, descripcion, fecha_vencimiento, color):
     if not nombre.strip():
-        print(Fore.RED + "El nombre de la tarea no puede estar vacío.")
+        print(Fore.RED + "El nombre de la tarea no puede estar vacío ☠️.")
         return
     if not descripcion.strip():
-        print(Fore.RED + "La descripción de la tarea no puede estar vacía.")
+        print(Fore.RED + "La descripción de la tarea no puede estar vacía ☠️.")
         return
     try:
         datetime.strptime(fecha_vencimiento, "%d/%m/%Y")
     except ValueError:
-        print(Fore.RED + "Formato de fecha inválido. Debe ser DD/MM/YYYY.")
+        print(Fore.RED + "Formato de fecha inválido. Debe ser DD/MM/YYYY. ☠️")
         return
     tareaNueva = {
         "nombre_tarea": nombre,
@@ -48,7 +48,7 @@ def agregar_tarea(nombre, descripcion, fecha_vencimiento, color):
         "completada": False
     }
     listaDeTareas.append(tareaNueva)
-    print(color + "Tarea agregada con ÉXITO!\n" + "-"*50)
+    print(color + "Tarea agregada con ÉXITO!\n 👍🏻" + "-"*50)
 
 def ver_listado(color):
     hoy = datetime.now()
@@ -62,9 +62,9 @@ def borrar_tarea(nombre, color):
     for tarea in listaDeTareas:
         if tarea["nombre_tarea"].lower() == nombre.lower():
             listaDeTareas.remove(tarea)
-            print(color + f"Tarea: {nombre} eliminada con éxito\n" + "-"*50)
+            print(color + f"Tarea: {nombre} eliminada con éxito\n ❌" + "-"*50)
             return
-    print(Fore.RED + f"Tarea con el nombre {nombre} NO ENCONTRADA\n" + "-"*50)
+    print(Fore.RED + f"Tarea con el nombre {nombre} NO ENCONTRADA\n 🥺" + "-"*50)
 
 def editar_tarea(nombre, color):
     for tarea in listaDeTareas:
@@ -110,14 +110,14 @@ def ver_opciones_menu():
     print("\n" + Back.CYAN + "✩✩✩｡:*•.──**─❁❁❁PROGRAMA✩DE✩TAREAS ❁❁❁─**──.•*:｡✩✩✩\n")
     for i, (opcion, color) in enumerate(colores_menu.items(), start=1):
         texto = {
-            1: "Ver listado de tareas",
-            2: "Agregar una tarea nueva",
-            3: "Editar una tarea existente",
-            4: "Eliminar una tarea de la lista",
-            5: "Buscar una tarea por descripción",
-            6: "Buscar una tarea por nombre",
-            7: "Marcar tarea como completada",
-            8: "Salir del programa"
+            1: "༻✦༺Ver listado de tareas",
+            2: "༻✦༺Agregar una tarea nueva",
+            3: "༻✦༺Editar una tarea existente",
+            4: "༻✦༺Eliminar una tarea de la lista",
+            5: "༻✦༺Buscar una tarea por descripción",
+            6: "༻✦༺Buscar una tarea por nombre",
+            7: "༻✦༺Marcar tarea como completada",
+            8: "༻✦༺Salir del programa"
         }
         print(f"{color}{i}) {texto[i]}{Style.RESET_ALL}")
         print("-"*50)
