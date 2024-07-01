@@ -110,14 +110,14 @@ def ver_opciones_menu():
     print("\n" + Back.CYAN + "✩✩✩｡:*•.──**─❁❁❁PROGRAMA✩DE✩TAREAS ❁❁❁─**──.•*:｡✩✩✩\n")
     for i, (opcion, color) in enumerate(colores_menu.items(), start=1):
         texto = {
-            1: "༻✦༺Ver listado de tareas",
-            2: "༻✦༺Agregar una tarea nueva",
-            3: "༻✦༺Editar una tarea existente",
-            4: "༻✦༺Eliminar una tarea de la lista",
-            5: "༻✦༺Buscar una tarea por descripción",
-            6: "༻✦༺Buscar una tarea por nombre",
-            7: "༻✦༺Marcar tarea como completada",
-            8: "༻✦༺Salir del programa"
+            1: "༻✦༺ Ver listado de tareas",
+            2: "༻✦༺ Agregar una tarea nueva",
+            3: "༻✦༺ Editar una tarea existente",
+            4: "༻✦༺ Eliminar una tarea de la lista",
+            5: "༻✦༺ Buscar una tarea por descripción",
+            6: "༻✦༺ Buscar una tarea por nombre",
+            7: "༻✦༺ Marcar tarea como completada",
+            8: "༻✦༺ Salir del programa"
         }
         print(f"{color}{i}) {texto[i]}{Style.RESET_ALL}")
         print("-"*50)
