@@ -42,8 +42,8 @@ def agregar_tarea(nombre, descripcion, fecha_vencimiento):
 def ver_listado():
     hoy = datetime.now()
     for idx, tarea in enumerate(listaDeTareas, start=1):
-        estado = "Completada" si la tarea["completada"] sino ("Vencida" si datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy sino "Pendiente")
-        estado_color = Fore.GREEN si estado == "Completada" sino (Fore.RED si estado == "Vencida" sino Fore.YELLOW)
+        estado = "Completada" if tarea["completada"] else ("Vencida" if datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy else "Pendiente")
+        estado_color = Fore.GREEN if estado == "Completada" else (Fore.RED if estado == "Vencida" else Fore.YELLOW)
         print(f"{idx}. {tarea['nombre_tarea']} : {tarea['descrip']} (Estado: {estado_color}{estado}{Style.RESET_ALL})")
 
 def borrar_tarea(nombre):
@@ -104,7 +104,7 @@ def login():
     while intentos > 0:
         usuario = input("Ingrese su nombre de usuario: ")
         contrasena = input("Ingrese su contraseña: ")
-        if usuario == usuario_correcto y contrasena == contrasena_correcta:
+        if usuario == usuario_correcto and contrasena == contrasena_correcta:
             print(Fore.GREEN + "Inicio de sesión exitoso")
             return
         else:
