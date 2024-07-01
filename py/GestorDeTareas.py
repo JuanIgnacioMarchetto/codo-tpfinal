@@ -72,6 +72,12 @@ def editar_tarea(nombre, color):
             nuevoNombre = input(color + f"Ingrese el nuevo nombre para reemplazar a {nombre}: ")
             nuevaDescripcion = input(color + f"Ingresa la nueva descripción para {nombre}: ")
             nuevaFecha = input(color + f"Ingresa la nueva fecha de vencimiento (DD/MM/YYYY) para {nombre}: ")
+            if not nuevoNombre.strip():
+                print(Fore.RED + "El nombre de la tarea no puede estar vacío ☠️.")
+                return
+            if not nuevaDescripcion.strip():
+                print(Fore.RED + "La descripción de la tarea no puede estar vacía ☠️.")
+                return
             try:
                 datetime.strptime(nuevaFecha, "%d/%m/%Y")
             except ValueError:
