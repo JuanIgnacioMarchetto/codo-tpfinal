@@ -56,7 +56,8 @@ def ver_listado(color):
         estado = "Completada" if tarea["completada"] else ("Vencida" if datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy else "Pendiente")
         estado_color = Fore.GREEN if estado == "Completada ✔️" else (Fore.RED if estado == "Vencida" else Fore.YELLOW)
         print(f"{idx}. {tarea['nombre_tarea']} : {tarea['descrip']} (Estado: {estado_color}{estado}{Style.RESET_ALL})")
-        print("-"*50)
+        print("-."*50)
+
 
 def borrar_tarea(nombre, color):
     for tarea in listaDeTareas:
@@ -110,12 +111,13 @@ def marcar_completada(nombre, color):
             tarea["completada"] = True
             print(color + f"Tarea {nombre} marcada como completada.\n" + "-"*50)
             return
-    print(Fore.RED + f"Tarea con el nombre {nombre} no encontrada\n" + "-"*50)
+    print(Fore.RED + f"Tarea con el nombre {nombre} no encontrada\n" + "x"*50)
 
 def ver_opciones_menu():
-    print("\n" + Back.CYAN + "✩✩✩｡:*•.──**─❁❁❁PROGRAMA✩DE✩TAREAS ❁❁❁─**──.•*:｡✩✩✩\n")
+    print("\n" + Back.CYAN + "✩✩✩｡:*•.──*--*─❁❁❁ PROGRAMA✩DE✩TAREAS ❁❁❁─*--*──.•*:｡✩✩✩ \n")
     for i, (opcion, color) in enumerate(colores_menu.items(), start=1):
         texto = {
+            
             1: "༻✦༺ Ver listado de tareas",
             2: "༻✦༺ Agregar una tarea nueva",
             3: "༻✦༺ Editar una tarea existente",
@@ -126,7 +128,8 @@ def ver_opciones_menu():
             8: "༻✦༺ Salir del programa"
         }
         print(f"{color}{i}) {texto[i]}{Style.RESET_ALL}")
-        print("-"*50)
+        print("-."*50)
+
 
 def login():
     usuario_correcto = "Marcos"
