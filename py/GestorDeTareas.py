@@ -54,7 +54,7 @@ def ver_listado(color):
     hoy = datetime.now()
     for idx, tarea in enumerate(listaDeTareas, start=1):
         estado = "Completada" if tarea["completada"] else ("Vencida" if datetime.strptime(tarea["fecha_vencimiento"], "%d/%m/%Y") < hoy else "Pendiente")
-        estado_color = Fore.GREEN if estado == "Completada" else (Fore.RED if estado == "Vencida" else Fore.YELLOW)
+        estado_color = Fore.GREEN if estado == "Completada ✔️" else (Fore.RED if estado == "Vencida" else Fore.YELLOW)
         print(f"{idx}. {tarea['nombre_tarea']} : {tarea['descrip']} (Estado: {estado_color}{estado}{Style.RESET_ALL})")
         print("-"*50)
 
