@@ -133,15 +133,15 @@ def login():
     contrasena_correcta = "1234"
     intentos = 3
     while intentos > 0:
-        usuario = input("Ingrese su nombre de usuario: ")
+        usuario = input(" ㋛㋛ Ingrese su nombre de usuario ㋛㋛ : ")
         contrasena = input("Ingrese su contraseña: ")
         if usuario == usuario_correcto and contrasena == contrasena_correcta:
             print(Fore.GREEN + "Inicio de sesión exitoso\n" + "-"*50)
             return
         else:
             intentos -= 1
-            print(Fore.RED + f"Nombre de usuario o contraseña incorrectos. Intentos restantes: {intentos}\n" + "-"*50)
-    print(Fore.RED + "Se han agotado los intentos. Acceso denegado.\n" + "-"*50)
+            print(Fore.RED + f"( ͡๏_͡๏ )  Nombre de usuario o contraseña incorrectos ( ͡๏_͡๏ ) . Intentos restantes: {intentos}\n" + "-"*50)
+    print(Fore.RED + "٩͡[๏̯͡๏]۶  Se han agotado los intentos. Acceso denegado  ٩͡[๏̯͡๏]۶  .\n" + "-"*50)
     exit()
 
 login()
