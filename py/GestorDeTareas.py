@@ -31,15 +31,15 @@ listaDeTareas = [
 
 def agregar_tarea(nombre, descripcion, fecha_vencimiento, color):
     if not nombre.strip():
-        print(Fore.RED + "El nombre de la tarea no puede estar vacío ☠️.")
+        print(Fore.RED + "☠️ El nombre de la tarea no puede estar vacío ☠️.")
         return
     if not descripcion.strip():
-        print(Fore.RED + "La descripción de la tarea no puede estar vacía ☠️.")
+        print(Fore.RED + "☠️ La descripción de la tarea no puede estar vacía ☠️.")
         return
     try:
         datetime.strptime(fecha_vencimiento, "%d/%m/%Y")
     except ValueError:
-        print(Fore.RED + "Formato de fecha inválido. Debe ser DD/MM/YYYY. ☠️")
+        print(Fore.RED +  "☠️ Formato de fecha inválido. Debe ser DD/MM/YYYY. ☠️")
         return
     tareaNueva = {
         "nombre_tarea": nombre,
@@ -48,7 +48,7 @@ def agregar_tarea(nombre, descripcion, fecha_vencimiento, color):
         "completada": False
     }
     listaDeTareas.append(tareaNueva)
-    print(color + "Tarea agregada con ÉXITO!\n 👍🏻" + "-"*50)
+    print(color + "👍🏻 Tarea agregada con ÉXITO!\n 👍🏻 " + "-"*50)
 
 def ver_listado(color):
     hoy = datetime.now()
