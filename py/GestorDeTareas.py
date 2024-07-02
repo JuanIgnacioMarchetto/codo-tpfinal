@@ -1,5 +1,45 @@
 from datetime import datetime
 from colorama import init, Fore, Back, Style
+import time
+import sys
+
+def animacion_aprobacion():
+    for _ in range(3):
+        sys.stdout.write("\r[=         ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[===       ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[=====     ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[=======   ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[========= ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[==========]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+    print()
+
+def animacion_error():
+    for _ in range(3):
+        sys.stdout.write("\r[          ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[   ERROR  ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[          ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+        sys.stdout.write("\r[   ERROR  ]")
+        sys.stdout.flush()
+        time.sleep(0.2)
+    print()
 
 init(autoreset=True)
 
@@ -32,9 +72,7 @@ listaDeTareas = [
 def agregar_tarea(nombre, descripcion, fecha_vencimiento, color):
     if not nombre.strip():
         print(Fore.RED + "El nombre de la tarea no puede estar vacío ☠️.")
-        return
-    if not descripcion.strip():
-        print(Fore.RED + "La descripción de la tarea no puede estar vacía ☠️.")
+        animacion_error() 
         return
     try:
         datetime.strptime(fecha_vencimiento, "%d/%m/%Y")
@@ -49,6 +87,7 @@ def agregar_tarea(nombre, descripcion, fecha_vencimiento, color):
     }
     listaDeTareas.append(tareaNueva)
     print(color + "Tarea agregada con ÉXITO!\n 👍🏻" + "-"*50)
+    animacion_aprobacion()
 
 def ver_listado(color):
     hoy = datetime.now()
